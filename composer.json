@@ -1,0 +1,39 @@
+{
+    "name": "puff/pipeline",
+    "description": "Lightweight container-aware pipeline for Puff",
+    "type": "library",
+    "keywords": [
+        "php",
+        "pipeline",
+        "middleware",
+        "psr-11",
+        "puff"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "psr/container": "^2.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Puff\\Pipeline\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Puff\\Pipeline\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse": "phpstan analyse src tests --level=8 --memory-limit=1G",
+        "test": "phpunit tests"
+    }
+}
