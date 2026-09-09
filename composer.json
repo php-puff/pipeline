@@ -12,6 +12,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "puff/console": "dev-main",
         "psr/container": "^2.0"
     },
     "require-dev": {
@@ -26,6 +27,13 @@
     "autoload-dev": {
         "psr-4": {
             "Puff\\Pipeline\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "puff": {
+            "commands": [
+                "Puff\\Pipeline\\ConsoleProvider"
+            ]
         }
     },
     "config": {

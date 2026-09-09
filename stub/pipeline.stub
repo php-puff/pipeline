@@ -1,0 +1,20 @@
+<?php
+
+/*
+ * PHP Unison Fiber Framework
+ * https://github.com/php-puff/puff
+ * https://github.com/php-puff/puff/issues
+ * Copyright (c) Puff
+ */
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+final class %CLASS%
+{
+    public function handle(mixed $passable, callable $next): mixed
+    {
+        return $next($passable);
+    }
+}

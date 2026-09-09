@@ -2,6 +2,14 @@
 
 Lightweight, framework-independent pipeline with optional PSR-11 service resolution.
 
+Installing the component registers its application pipeline generator with Puff Console:
+
+```bash
+./puff pipeline Authenticate
+```
+
+The generated stage uses `mixed` input and output so the component remains independent of HTTP.
+
 ```php
 $result = (new Pipeline($container))
     ->send($request)
