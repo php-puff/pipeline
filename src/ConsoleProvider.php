@@ -13,7 +13,6 @@ namespace Puff\Pipeline;
 
 use Puff\Console\CommandProvider;
 use Puff\Console\Contract;
-use Puff\Console\GenerateCommand;
 use Puff\Console\Generator;
 use Psr\Container\ContainerInterface;
 
@@ -22,6 +21,6 @@ final class ConsoleProvider implements CommandProvider
     /** @return iterable<Contract> */
     public function commands(string $root, ContainerInterface $container): iterable
     {
-        yield new GenerateCommand('pipeline', 'App\\Pipeline', \dirname(__DIR__) . '/stub/pipeline.stub', new Generator($root));
+        yield new PipelineCommand(new Generator($root), \dirname(__DIR__) . '/stub/pipeline.stub');
     }
 }
